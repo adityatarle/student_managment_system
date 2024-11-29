@@ -15,7 +15,7 @@
         @endif
 
         <div class="card-body">
-            <a href="{{ route('tasks.create') }}" class="mb-3 btn btn-primary">Add Task</a>
+            <a href="{{ route('tasks.create') }}" class="mb-3 btn btn-light-dark">Add Task</a>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -40,7 +40,7 @@
                                 <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-light-danger">Delete</button>
                                 </form>
                             </td>
                         </tr>

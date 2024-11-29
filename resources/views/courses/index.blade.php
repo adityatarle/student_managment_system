@@ -13,14 +13,14 @@
         @endif
 
         <div class="card-body">
-            <a href="{{ route('courses.create') }}" class="mb-3 btn btn-primary">Add New Course</a>
+            <a href="{{ route('courses.create') }}" class="mb-3 btn btn-light-dark">Add New Course</a>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Description</th>
-                            <th>Duration</th>
+                            <th>Duration ( In Weeks )</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -29,13 +29,13 @@
                             <tr>
                                 <td>{{ $course->name }}</td>
                                 <td>{{ $course->description }}</td>
-                                <td>{{ $course->duration }}</td>
+                                <td>{{ $course->duration }} Weeks</td>
                                 <td>
-                                    <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-light-warning">Edit</a>
                                     <form action="{{ route('courses.destroy', $course->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        <button type="submit" class="btn btn-light-danger">Delete</button>
                                     </form>
                                 </td>
                             </tr>

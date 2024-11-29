@@ -15,7 +15,7 @@
         @endif
 
         <div class="card-body">
-            <a href="{{ route('enrollments.create') }}" class="mb-3 btn btn-primary">Add Enrollment</a>
+            <a href="{{ route('enrollments.create') }}" class="mb-3 btn btn-light-dark">Add Enrollment</a>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -36,7 +36,7 @@
                                 <form action="{{ route('enrollments.destroy', $enrollment->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-light-danger">Delete</button>
                                 </form>
                             </td>
                         </tr>

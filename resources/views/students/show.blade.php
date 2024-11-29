@@ -84,7 +84,7 @@
                                     <td>{{ $task->description }}</td>
                                     <td>
                                         <button
-                                            class="btn btn-sm btn-outline btn-toggle-status"
+                                            class="btn btn-sm btn-light-info btn-toggle-status"
                                             data-task-id="{{ $task->id }}"
                                             data-status="{{ $task->status }}">
                                             {{ $task->status }}
@@ -122,7 +122,15 @@
                 .then(data => {
                     this.textContent = data.status;
                     this.setAttribute('data-status', data.status);
-                    alert(data.message);
+                    Swal.fire({
+                        text: `${data.message}`,
+                        icon: "success",
+                        buttonsStyling: false,
+                        confirmButtonText: "Ok, got it!",
+                        customClass: {
+                            confirmButton: "btn btn-primary"
+                        }
+                    });
                 })
                 .catch(error => console.error('Error:', error));
             });

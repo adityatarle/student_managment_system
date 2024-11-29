@@ -14,7 +14,7 @@
         @endif
 
         <div class="card-body">
-            <a href="{{ route('students.create') }}" class="mb-3 btn btn-primary">Add Student</a>
+            <a href="{{ route('students.create') }}" class="mb-3 btn btn-light-dark">Add Student</a>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -36,12 +36,12 @@
                             <td>{{ $student->phone }}</td>
                             <td>{{ $student->address }}</td>
                             <td>
-                                <a href="{{ route('students.show', $student->id) }}" class="btn btn-info">View Details</a>
-                                <a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="{{ route('students.show', $student->id) }}" class="btn btn-light-info">View Details</a>
+                                <a href="{{ route('students.edit', $student->id) }}" class="btn btn-light-warning">Edit</a>
                                 <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    <button type="submit" class="btn btn-light-danger">Delete</button>
                                 </form>
                             </td>
                         </tr>

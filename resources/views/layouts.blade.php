@@ -92,18 +92,6 @@
 									data-kt-search-enter="enter" data-kt-search-layout="menu"
 									data-kt-menu-trigger="auto" data-kt-menu-overflow="false"
 									data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
-									<!--begin::Search toggle-->
-									<div class="d-flex align-items-center" data-kt-search-element="toggle"
-										id="kt_header_search_toggle">
-										<div
-											class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px">
-											<i class="ki-duotone ki-magnifier fs-2">
-												<span class="path1"></span>
-												<span class="path2"></span>
-											</i>
-										</div>
-									</div>
-									<!--end::Search toggle-->
 									<!--begin::Menu-->
 
 									<!--end::Menu-->
@@ -219,10 +207,11 @@
 											<!--end::Avatar-->
 											<!--begin::Username-->
 											<div class="d-flex flex-column">
-												<div class="fw-bold d-flex align-items-center fs-5">{{auth()->user()->name}}
+												<div class="fw-bold d-flex align-items-center fs-5">{{auth()->user()->name}} <br> ({{ ucwords(auth()->user()->role) }}
+                                                    )
 												</div>
 												<a href="#"
-													class="fw-semibold text-muted text-hover-primary fs-7"><?php //auth()->user()->email ?></a>
+													class="fw-semibold text-muted text-hover-primary fs-7">{{auth()->user()->email}}</a>
 											</div>
 											<!--end::Username-->
 										</div>
@@ -614,13 +603,7 @@
 					<!--begin::Menu-->
 					<ul class="order-1 menu menu-gray-600 menu-hover-primary fw-semibold">
 						<li class="menu-item">
-							<a href="#" target="_blank" class="px-2 menu-link">About</a>
-						</li>
-						<li class="menu-item">
-							<a href="#" target="_blank" class="px-2 menu-link">Support</a>
-						</li>
-						<li class="menu-item">
-							<a href="#" target="_blank" class="px-2 menu-link">Purchase</a>
+							<a href="#" target="_blank" class="px-2 menu-link">Developed By Aditya</a>
 						</li>
 					</ul>
 					<!--end::Menu-->
