@@ -20,7 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'password','role'
     ];
 
     /**
@@ -45,4 +45,43 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function courses()
+    {
+        // Check if the user has the 'student' role
+        if ($this->role === 'student') {
+            return $this->hasMany(Course::class);
+        }
+
+        // If the user is not a student, return an empty collection
+        return collect();
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function student()
+    {
+        return $this->hasOne(Student::class);
+    }
+
+    // Define relationship for the Teacher
+    public function teacher()
+    {
+        return $this->hasOne(Teacher::class);
+    }
+
+    // You can also define a method to check the role
+    public function isStudent()
+    {
+        return $this->role === 'student';
+    }
+
+    public function isTeacher()
+    {
+        return $this->role === 'teacher';
+    }
+
 }
