@@ -21,4 +21,11 @@ class Task extends Model
         return $this->belongsTo(Teacher::class);
     }
 
+    public function toggleStatus()
+    {
+        $this->status = $this->status === 'Pending' ? 'Completed' : 'Pending';
+        $this->save();
+    }
+
+
 }

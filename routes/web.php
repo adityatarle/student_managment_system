@@ -44,6 +44,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('students', StudentController::class)->middleware('admin_or_teacher');
     Route::resource('tasks', TaskController::class)->middleware('teacher');
     Route::get('/student-profile/{id}', [StudentController::class, 'show_profile'])->name('students.profile')->middleware('student');
+    Route::patch('/tasks/{task}/toggle-status', [TaskController::class, 'toggleStatus'])
+    ->name('tasks.toggle-status');
+
+
 
 
 

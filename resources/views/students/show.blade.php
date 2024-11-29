@@ -82,7 +82,15 @@
                                     <td>{{ $task->title }}</td>
                                     <td>{{ $task->due_date }}</td>
                                     <td>{{ $task->description }}</td>
-                                    <td>{{ $task->status }}</td>
+                                    <td>
+                                        <button
+                                            class="btn btn-sm btn-outline btn-toggle-status"
+                                            data-task-id="{{ $task->id }}"
+                                            data-status="{{ $task->status }}">
+                                            {{ $task->status }}
+                                        </button>
+                                    </td>
+
                                     <td>{{ $task->teacher->name }}</td>
                                 </tr>
                             @endforeach
@@ -93,4 +101,33 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleButtons = document.querySelectorAll('.btn-toggle-status');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const taskId = this.getAttribute('data-task-id');
+                const url = `/tasks/${taskId}/toggle-status`;
+
+                fetch(url, {
+                    method: 'PATCH',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Content-Type': 'application/json'
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    this.textContent = data.status;
+                    this.setAttribute('data-status', data.status);
+                    alert(data.message);
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        });
+    });
+</script>
+
 @endsection
