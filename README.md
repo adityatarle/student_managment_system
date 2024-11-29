@@ -120,12 +120,18 @@ GitHub: adityatarle
 
 ## Screenshots
 
-1. **Dashboard**
+1. **Login**
    ![Dashboard Screenshot](Project_Screenshots/login.png)
 
-2. **Student Details**
+2. **Admin Dashboard**
+   ![Dashboard Screenshot](Project_Screenshots/teachers-list.png)
+
+3. **Student Details**
    ![Student Details Screenshot](Project_Screenshots/student-details.png)
 
-3. **Enrolled Courses**
-   ![Enrolled Courses Screenshot](Project_Screenshots/student-list.png)
+4. **Teacher Dashboard**
+   ![Enrolled Courses Screenshot](Project_Screenshots/students-list.png)
+
+5. **Enrollments Dashboard**
+   ![Enrolled Courses Screenshot](Project_Screenshots/enrollments-list.png)
 
