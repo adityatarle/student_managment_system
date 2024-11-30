@@ -20,7 +20,7 @@ class TaskController extends Controller
     public function create()
     {
         // Get all students and teachers for the form
-        $students = User::where('role', 'student')->get();
+        $students = Student::all();
         $teachers = Teacher::all();
         return view('tasks.create', compact('students', 'teachers'));
     }

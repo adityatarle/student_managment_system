@@ -51,8 +51,8 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=laravel_student_management
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
+DB_USERNAME=root
+DB_PASSWORD=
 
 3. Configure the Environment
 Duplicate the .env.example file and rename it to .env.
@@ -79,8 +79,8 @@ Open your preferred MySQL management tool (e.g., phpMyAdmin, MySQL Workbench).
 Select the laravel_student_management database.
 Import the laravel_student_management.sql file.
 7. Start the Application
-bash
-Copy code
+
+
 php artisan serve
 Access the project at http://localhost:8000.
 
@@ -92,6 +92,19 @@ Student Details
 Enrolled Courses
 
 Assigned Tasks
+
+## Login credentials if your using mydatabase file
+Admin Login:
+email: admin@example.com
+password: password
+
+Teacher Login:
+email: teacher@example.com
+password: password
+
+Student Login:
+email: student@example.com
+password: password
 
 Usage
 Log in or register using the built-in Breeze authentication.
@@ -112,7 +125,7 @@ This project is licensed under the MIT License.
 Contact
 For any questions or support, please feel free to reach out to:
 
-Name: Your Name
+Name: Aditya Tarle
 Email: tarleaadii@gmail.com
 GitHub: adityatarle
 
